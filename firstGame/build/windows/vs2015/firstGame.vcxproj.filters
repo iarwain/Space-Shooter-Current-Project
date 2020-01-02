@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{1668689F-B9BB-9449-9258-943D2BA85B0B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="config">
+      <UniqueIdentifier>{0638221A-028F-644B-AB41-DC841D32B501}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\data\config\CreationTemplate.ini">
+      <Filter>config</Filter>
+    </None>
+    <None Include="..\..\..\data\config\firstGame.ini">
+      <Filter>config</Filter>
+    </None>
+    <None Include="..\..\..\data\config\firstGamed.ini">
+      <Filter>config</Filter>
+    </None>
+    <None Include="..\..\..\data\config\firstGamep.ini">
+      <Filter>config</Filter>
+    </None>
+    <None Include="..\..\..\data\config\SettingsTemplate.ini">
+      <Filter>config</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\firstGame.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

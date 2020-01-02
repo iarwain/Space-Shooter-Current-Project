@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2019
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "firstGame", "firstGame.vcxproj", "{C93BE293-8A9F-2049-9D2D-F8F52B60F5E6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|Win32 = Debug|Win32
+		Profile|x64 = Profile|x64
+		Profile|Win32 = Profile|Win32
+		Release|x64 = Release|x64
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C93BE293-8A9F-2049-9D2D-F8F52B60F5E6}.Debug|x64.ActiveCfg = Debug|x64
+		{C93BE293-8A9F-2049-9D2D-F8F52B60F5E6}.Debug|x64.Build.0 = Debug|x64
+		{C93BE293-8A9F-2049-9D2D-F8F52B60F5E6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C93BE293-8A9F-2049-9D2D-F8F52B60F5E6}.Debug|Win32.Build.0 = Debug|Win32
+		{C93BE293-8A9F-2049-9D2D-F8F52B60F5E6}.Profile|x64.ActiveCfg = Profile|x64
+		{C93BE293-8A9F-2049-9D2D-F8F52B60F5E6}.Profile|x64.Build.0 = Profile|x64
+		{C93BE293-8A9F-2049-9D2D-F8F52B60F5E6}.Profile|Win32.ActiveCfg = Profile|Win32
+		{C93BE293-8A9F-2049-9D2D-F8F52B60F5E6}.Profile|Win32.Build.0 = Profile|Win32
+		{C93BE293-8A9F-2049-9D2D-F8F52B60F5E6}.Release|x64.ActiveCfg = Release|x64
+		{C93BE293-8A9F-2049-9D2D-F8F52B60F5E6}.Release|x64.Build.0 = Release|x64
+		{C93BE293-8A9F-2049-9D2D-F8F52B60F5E6}.Release|Win32.ActiveCfg = Release|Win32
+		{C93BE293-8A9F-2049-9D2D-F8F52B60F5E6}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,4 @@
+[09:16:59] [LOG] 
+* This template project creates a viewport/camera couple and an object
+* You can play with the config parameters in ../data/config/firstGame.ini
+* After changing them, relaunch the executable to see the changes.
