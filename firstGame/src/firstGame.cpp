@@ -219,8 +219,6 @@ orxSTATUS orxFASTCALL Init()
 
     orxObject_CreateFromConfig("Scene");
 
-    enemyMovement();
-
     player = orxObject_CreateFromConfig("playerObject");
 
     playersRifle = (orxOBJECT*)orxObject_GetChild(player);
@@ -298,6 +296,8 @@ orxSTATUS orxFASTCALL Run()
     Movement();
 
     Shoot();
+
+    enemyMovement();
    
     return eResult;
 }
