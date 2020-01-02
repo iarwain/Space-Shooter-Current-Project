@@ -5849,3 +5849,115 @@
 [11:14:05] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <weapons> with value <4>.
 [11:14:05] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <enemy> with value <8>.
 [11:14:06] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <bullet> with value <16>.
+[12:45:50] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2781)] [firstGamed.ini]: Begin include @firstGame.ini@
+[12:45:50] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2787)] [firstGamed.ini]: End include @firstGame.ini@
+[12:45:50] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2676)] [firstGamed.ini]: <Display.Title> = Space Shooter -> firstGame (Debug)
+[12:45:51] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <player> with value <1>.
+[12:45:51] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <platforms> with value <2>.
+[12:45:51] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <weapons> with value <4>.
+[12:45:51] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <enemy> with value <8>.
+[12:45:52] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <bullet> with value <16>.
+[12:46:08] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2781)] [firstGamed.ini]: Begin include @firstGame.ini@
+[12:46:08] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2787)] [firstGamed.ini]: End include @firstGame.ini@
+[12:46:08] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2676)] [firstGamed.ini]: <Display.Title> = Space Shooter -> firstGame (Debug)
+[12:46:09] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <player> with value <1>.
+[12:46:09] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <platforms> with value <2>.
+[12:46:09] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <weapons> with value <4>.
+[12:46:09] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <enemy> with value <8>.
+[12:46:10] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <bullet> with value <16>.
+[12:46:23] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2781)] [firstGamed.ini]: Begin include @firstGame.ini@
+[12:46:23] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2787)] [firstGamed.ini]: End include @firstGame.ini@
+[12:46:23] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2676)] [firstGamed.ini]: <Display.Title> = Space Shooter -> firstGame (Debug)
+[12:46:24] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <player> with value <1>.
+[12:46:24] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <platforms> with value <2>.
+[12:46:24] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <weapons> with value <4>.
+[12:46:24] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <enemy> with value <8>.
+[12:46:25] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <bullet> with value <16>.
+[12:48:22] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2781)] [firstGamed.ini]: Begin include @firstGame.ini@
+[12:48:22] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2787)] [firstGamed.ini]: End include @firstGame.ini@
+[12:48:22] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2676)] [firstGamed.ini]: <Display.Title> = Space Shooter -> firstGame (Debug)
+[12:48:23] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <player> with value <1>.
+[12:48:23] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <platforms> with value <2>.
+[12:48:23] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <weapons> with value <4>.
+[12:48:23] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <enemy> with value <8>.
+[12:48:24] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <bullet> with value <16>.
+[12:48:45] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2781)] [firstGamed.ini]: Begin include @firstGame.ini@
+[12:48:45] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2787)] [firstGamed.ini]: End include @firstGame.ini@
+[12:48:45] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2676)] [firstGamed.ini]: <Display.Title> = Space Shooter -> firstGame (Debug)
+[12:48:46] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <player> with value <1>.
+[12:48:46] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <platforms> with value <2>.
+[12:48:46] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <weapons> with value <4>.
+[12:48:46] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <enemy> with value <8>.
+[12:48:47] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <bullet> with value <16>.
+[12:49:34] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2781)] [firstGamed.ini]: Begin include @firstGame.ini@
+[12:49:34] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2787)] [firstGamed.ini]: End include @firstGame.ini@
+[12:49:34] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2676)] [firstGamed.ini]: <Display.Title> = Space Shooter -> firstGame (Debug)
+[12:49:35] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <player> with value <1>.
+[12:49:35] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <platforms> with value <2>.
+[12:49:35] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <weapons> with value <4>.
+[12:49:35] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <enemy> with value <8>.
+[12:49:36] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <bullet> with value <16>.
+[12:49:55] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2781)] [firstGamed.ini]: Begin include @firstGame.ini@
+[12:49:55] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2787)] [firstGamed.ini]: End include @firstGame.ini@
+[12:49:55] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2676)] [firstGamed.ini]: <Display.Title> = Space Shooter -> firstGame (Debug)
+[12:49:56] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <player> with value <1>.
+[12:49:56] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <platforms> with value <2>.
+[12:49:56] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <weapons> with value <4>.
+[12:49:56] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <enemy> with value <8>.
+[12:49:57] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <bullet> with value <16>.
+[12:50:28] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2781)] [firstGamed.ini]: Begin include @firstGame.ini@
+[12:50:28] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2787)] [firstGamed.ini]: End include @firstGame.ini@
+[12:50:28] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2676)] [firstGamed.ini]: <Display.Title> = Space Shooter -> firstGame (Debug)
+[12:50:29] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <player> with value <1>.
+[12:50:29] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <platforms> with value <2>.
+[12:50:29] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <weapons> with value <4>.
+[12:50:29] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <enemy> with value <8>.
+[12:50:30] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <bullet> with value <16>.
+[12:50:44] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2781)] [firstGamed.ini]: Begin include @firstGame.ini@
+[12:50:44] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2787)] [firstGamed.ini]: End include @firstGame.ini@
+[12:50:44] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2676)] [firstGamed.ini]: <Display.Title> = Space Shooter -> firstGame (Debug)
+[12:50:45] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <player> with value <1>.
+[12:50:45] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <platforms> with value <2>.
+[12:50:45] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <weapons> with value <4>.
+[12:50:45] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <enemy> with value <8>.
+[12:50:46] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <bullet> with value <16>.
+[12:55:08] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2781)] [firstGamed.ini]: Begin include @firstGame.ini@
+[12:55:08] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2787)] [firstGamed.ini]: End include @firstGame.ini@
+[12:55:08] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2676)] [firstGamed.ini]: <Display.Title> = Space Shooter -> firstGame (Debug)
+[12:55:09] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <player> with value <1>.
+[12:55:09] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <platforms> with value <2>.
+[12:55:09] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <weapons> with value <4>.
+[12:55:09] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <enemy> with value <8>.
+[12:55:10] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <bullet> with value <16>.
+[12:55:20] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2781)] [firstGamed.ini]: Begin include @firstGame.ini@
+[12:55:20] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2787)] [firstGamed.ini]: End include @firstGame.ini@
+[12:55:20] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2676)] [firstGamed.ini]: <Display.Title> = Space Shooter -> firstGame (Debug)
+[12:55:21] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <player> with value <1>.
+[12:55:21] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <platforms> with value <2>.
+[12:55:21] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <weapons> with value <4>.
+[12:55:21] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <enemy> with value <8>.
+[12:55:22] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <bullet> with value <16>.
+[13:25:28] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2781)] [firstGamed.ini]: Begin include @firstGame.ini@
+[13:25:28] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2787)] [firstGamed.ini]: End include @firstGame.ini@
+[13:25:28] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2676)] [firstGamed.ini]: <Display.Title> = Space Shooter -> firstGame (Debug)
+[13:25:29] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <player> with value <1>.
+[13:25:29] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <platforms> with value <2>.
+[13:25:29] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <weapons> with value <4>.
+[13:25:29] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <enemy> with value <8>.
+[13:25:30] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <bullet> with value <16>.
+[13:25:46] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2781)] [firstGamed.ini]: Begin include @firstGame.ini@
+[13:25:46] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2787)] [firstGamed.ini]: End include @firstGame.ini@
+[13:25:46] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2676)] [firstGamed.ini]: <Display.Title> = Space Shooter -> firstGame (Debug)
+[13:25:47] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <player> with value <1>.
+[13:25:47] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <platforms> with value <2>.
+[13:25:47] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <weapons> with value <4>.
+[13:25:47] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <enemy> with value <8>.
+[13:25:48] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <bullet> with value <16>.
+[13:26:12] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2781)] [firstGamed.ini]: Begin include @firstGame.ini@
+[13:26:12] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2787)] [firstGamed.ini]: End include @firstGame.ini@
+[13:26:12] [CONFIG] [orxConfig.c:orxConfig_ProcessBuffer(2676)] [firstGamed.ini]: <Display.Title> = Space Shooter -> firstGame (Debug)
+[13:26:13] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <player> with value <1>.
+[13:26:13] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <platforms> with value <2>.
+[13:26:13] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <weapons> with value <4>.
+[13:26:13] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <enemy> with value <8>.
+[13:26:14] [PHYSICS] [orxPhysics.c:orxPhysics_GetCollisionFlagValue(232)] Adding collision flag <bullet> with value <16>.

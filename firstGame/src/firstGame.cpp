@@ -172,25 +172,21 @@ orxSTATUS orxFASTCALL PhysicsEventHandler(const orxEVENT* _pstEvent)
             if (orxString_Compare(recipientObjectName, "rifleBulletObject") == 0 && orxString_Compare(senderObjectName, "spiderObject") == 0)
             {
                 orxObject_SetTargetAnim(pstSenderObject, "DeadLeft");
-                orxObject_SetLifeTime(pstSenderObject, 0);
                 orxObject_SetLifeTime(pstRecipientObject, 0);
             }
             if (orxString_Compare(senderObjectName, "rifleBulletObject") == 0 && orxString_Compare(recipientObjectName, "spiderObject") == 0)
             {
                 orxObject_SetTargetAnim(pstRecipientObject, "DeadLeft");
-                orxObject_SetLifeTime(pstRecipientObject, 0);
                 orxObject_SetLifeTime(pstSenderObject, 0);
             }
             if (orxString_Compare(recipientObjectName, "pistolBulletObject") == 0 && orxString_Compare(senderObjectName, "spiderObject") == 0)
             {
                 orxObject_SetTargetAnim(pstSenderObject, "DeadLeft");
-                orxObject_SetLifeTime(pstSenderObject, 0);
                 orxObject_SetLifeTime(pstRecipientObject, 0);
             }
             if (orxString_Compare(senderObjectName, "pistolBulletObject") == 0 && orxString_Compare(recipientObjectName, "spiderObject") == 0)
             {
                 orxObject_SetTargetAnim(pstRecipientObject, "DeadLeft");
-                orxObject_SetLifeTime(pstRecipientObject, 0);
                 orxObject_SetLifeTime(pstSenderObject, 0);
             }
             orxConfig_PopSection();
