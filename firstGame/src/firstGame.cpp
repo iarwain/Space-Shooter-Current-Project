@@ -21,6 +21,24 @@ bool pistolPickUp = false;
 bool riflePickUp = false;
 int moveRight = 10;
 
+void enemyMovement()
+{
+    for (orxOBJECT* enemy = orxOBJECT(orxStructure_GetFirst(orxSTRUCTURE_ID_OBJECT));
+        enemy;
+        enemy = orxOBJECT(orxStructure_GetNext(enemy)))
+    {
+        orxConfig_PushSection(orxObject_GetName(enemy));
+        if (orxConfig_GetBool("IsEnemy"))
+        {
+            orxVECTOR speed;
+            orxConfig_GetVector("LeftSpeed", &speed);
+            orxObject_SetTargetAnim(enemy, "WalkLeft");
+            orxObject_SetSpeed(enemy, &speed);
+        }
+        orxConfig_PopSection();
+    }
+}
+
 void Movement() {
 
     orxVECTOR leftSpeed = { -19.5, 0, 0 };
@@ -200,6 +218,8 @@ orxSTATUS orxFASTCALL Init()
     orxViewport_CreateFromConfig("Viewport");
 
     orxObject_CreateFromConfig("Scene");
+
+    enemyMovement();
 
     player = orxObject_CreateFromConfig("playerObject");
 
