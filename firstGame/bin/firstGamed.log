@@ -2,3 +2,12 @@
 * This template project creates a viewport/camera couple and an object
 * You can play with the config parameters in ../data/config/firstGame.ini
 * After changing them, relaunch the executable to see the changes.
+[18:46:12] [LOG] 
+[18:46:13] [LOG] 
+[18:46:15] [LOG] 
+[18:46:16] [LOG] 
+[18:47:26] [LOG] WalkLeft
+[18:47:27] [LOG] WalkLeft
+[18:47:28] [LOG] WalkRight
+[18:47:29] [LOG] WalkLeft
+[18:47:30] [LOG] WalkLeft

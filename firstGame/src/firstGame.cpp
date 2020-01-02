@@ -5,69 +5,109 @@
 
 #include "orx.h"
 
-orxOBJECT* player;
-orxOBJECT* spider;
-orxOBJECT* pistol;
-orxOBJECT* rifle;
-orxOBJECT* playersPistol;
-orxOBJECT* playersRifle;
-orxCAMERA* camera;
+orxOBJECT* player = orxNULL;
+orxOBJECT* playersGun = orxNULL;
 bool canJump = true;
-bool hasPistol = false;
-bool hasRifle = false;
-bool pistolPickUp = false;
-bool riflePickUp = false;
+
+void PickUp(orxOBJECT *gun)
+{
+    // Has gun?
+    if(playersGun)
+    {
+        // Delete currently carried gun
+        orxObject_SetLifeTime(playersGun, orxFLOAT_0);
+    }
+
+    // Get new gun from the pickup's property named GunModel
+    playersGun = orxObject_CreateFromConfig(orxConfig_GetString("GunModel"));
+    if(playersGun)
+    {
+        // Delete pickup
+        orxObject_SetLifeTime(gun, orxFLOAT_0);
+
+        // Set the correct animation set from the pickup's property named GunAnimSet
+        orxObject_SetAnimSet(player, orxAnimSet_CreateFromConfig(orxConfig_GetString("GunAnimSet")));
+    }
+}
+
+orxSTATUS orxFASTCALL PhysicsEventHandler(const orxEVENT* _pstEvent)
+{
+    if (_pstEvent->eID == orxPHYSICS_EVENT_CONTACT_ADD) {
+        // We store them as two pairs (sender/recipient then recipient/sender), so as to not duplicate the logic code
+        struct
+        {
+            orxOBJECT *Self, *Other;
+        } Colliders[2] = {
+            {orxOBJECT(_pstEvent->hSender), orxOBJECT(_pstEvent->hRecipient)},
+            {orxOBJECT(_pstEvent->hRecipient), orxOBJECT(_pstEvent->hSender)}
+        };
+
+        // Iterating over the two pairs
+        for(orxU32 i = 0; i < orxARRAY_GET_ITEM_COUNT(Colliders); i++)
+        {
+            orxConfig_PushSection(orxObject_GetName(Colliders[i].Other));
+
+            // Platform?
+            if(orxConfig_GetBool("IsPlatform"))
+            {
+                canJump = true;
+            }
+            // Gun pickup?
+            else if(orxConfig_GetBool("IsGun"))
+            {
+                PickUp(Colliders[i].Other);
+            }
+            // Bullet?
+            else if(orxConfig_GetBool("IsBullet"))
+            {
+                // Die
+                orxObject_SetTargetAnim(Colliders[i].Self, "Dead");
+                // Remove bullet
+                orxObject_SetLifeTime(Colliders[i].Other, orxFLOAT_0);
+            }
+
+            orxConfig_PopSection();
+        }
+    }
+    return orxSTATUS_SUCCESS;
+}
 
 void Movement() {
     orxConfig_PushSection(orxObject_GetName(player));
     orxFLOAT horizontalSpeed = orxConfig_GetFloat("HorizontalSpeed");
 
     orxVECTOR speed;
+
+    // Get current speed
     orxObject_GetSpeed(player, &speed);
 
+    // Update horizontal speed based on inputs
     if(orxInput_IsActive("GoLeft"))
     {
         speed.fX = -horizontalSpeed;
-        if(hasPistol)
-        {
-            orxObject_SetTargetAnim(player, "playerWalkLeftPistol");
-        }
-        else if (hasRifle)
-        {
-            orxObject_SetTargetAnim(player, "playerWalkLeftRifle");
-        }
-        else
-        {
-            orxObject_SetTargetAnim(player, "playerWalkLeft");
-        }
+        orxObject_SetTargetAnim(player, "PlayerWalkLeft");
     }
     else if (orxInput_IsActive("GoRight"))
     {
         speed.fX = horizontalSpeed;
-        if(hasPistol)
-        {
-            orxObject_SetTargetAnim(player, "playerWalkRightPistol");
-        }
-        else if (hasRifle)
-        {
-            orxObject_SetTargetAnim(player, "playerWalkRightRifle");
-        }
-        else
-        {
-            orxObject_SetTargetAnim(player, "playerWalkRight");
-        }
+        orxObject_SetTargetAnim(player, "PlayerWalkRight");
     }
     else
     {
-        speed.fX = 0.0f;
+        speed.fX = orxFLOAT_0;
         orxObject_SetTargetAnim(player, orxNULL);
     }
+
+    // Apply new speed
     orxObject_SetSpeed(player, &speed);
 
+    // Jump?
     if (orxInput_HasBeenActivated("Jump") && canJump == true)
     {
         orxVECTOR jumpSpeed;
         orxConfig_GetVector("JumpSpeed", &jumpSpeed);
+
+        // Apply impulse, would be better handled as a speed as well
         orxObject_ApplyImpulse(player, &jumpSpeed, orxNULL);
         canJump = false;
     }
@@ -75,153 +115,70 @@ void Movement() {
 }
 
 void EnemyMovement() {
-    for (orxOBJECT* enemy = orxOBJECT(orxStructure_GetFirst(orxSTRUCTURE_ID_OBJECT));
+    // In its current form, this could be entirely done in config with KeyEvents
+    for (orxOBJECT* enemy = orxObject_GetNext(orxNULL, orxU32_UNDEFINED);
         enemy;
-        enemy = orxOBJECT(orxStructure_GetNext(enemy)))
+        enemy = orxObject_GetNext(enemy, orxU32_UNDEFINED))
     {
         orxConfig_PushSection(orxObject_GetName(enemy));
-
         if(orxConfig_GetBool("IsEnemy"))
         {
+            orxFLOAT horizontalSpeed = orxConfig_GetFloat("HorizontalSpeed");
+
+            // Match the speed with the current anim
             orxVECTOR speed;
             orxObject_GetSpeed(enemy, &speed);
 
-            orxFLOAT horizontalSpeed = orxConfig_GetFloat("HorizontalSpeed");
-
-            // Just going left for now
-            speed.fX = -horizontalSpeed;
+            const orxSTRING anim = orxObject_GetCurrentAnim(enemy);
+            if(orxString_Compare(anim, "WalkLeft") == 0)
+            {
+                speed.fX = -horizontalSpeed;
+            }
+            else if(orxString_Compare(anim, "WalkRight") == 0)
+            {
+                speed.fX = horizontalSpeed;
+            }
+            else
+            {
+                speed.fX = 0;
+            }
             orxObject_SetSpeed(enemy, &speed);
         }
         orxConfig_PopSection();
     }
 }
 
-orxSTATUS orxFASTCALL PhysicsEventHandler(const orxEVENT* _pstEvent)
+void Shoot()
 {
-    if (_pstEvent->eID == orxPHYSICS_EVENT_CONTACT_ADD) {
-        orxOBJECT* pstRecipientObject, * pstSenderObject;
-
-        pstSenderObject = orxOBJECT(_pstEvent->hSender);
-        pstRecipientObject = orxOBJECT(_pstEvent->hRecipient);
-
-        orxSTRING senderObjectName = (orxSTRING)orxObject_GetName(pstSenderObject);
-        orxSTRING recipientObjectName = (orxSTRING)orxObject_GetName(pstRecipientObject);
-
-        if (orxString_Compare(senderObjectName, "spaceShipMiddlePlatformObject") == 0)
-        {
-            canJump = true;
-        }
-
-        if (orxString_Compare(recipientObjectName, "spaceShipMiddlePlatformObject") == 0)
-        {
-            canJump = true;
-        }
-
-        if (orxString_Compare(senderObjectName, "pistolObject") == 0)
-        {
-            pistolPickUp = true;
-        }
-        else {
-            pistolPickUp = false;
-        }
-
-        if (orxString_Compare(recipientObjectName, "pistolObject") == 0)
-        {
-            pistolPickUp = true;
-        }
-        else {
-            pistolPickUp = false;
-        }
-
-        if (orxString_Compare(senderObjectName, "rifleObject") == 0)
-        {
-            riflePickUp = true;
-        }
-        else {
-            riflePickUp = false;
-        }
-
-        if (orxString_Compare(recipientObjectName, "rifleObject") == 0)
-        {
-            riflePickUp = true;
-        }
-        else {
-            riflePickUp = false;
-        }
-
-        for (orxOBJECT* enemy = orxOBJECT(orxStructure_GetFirst(orxSTRUCTURE_ID_OBJECT));
-            enemy;
-            enemy = orxOBJECT(orxStructure_GetNext(enemy)))
-        {
-            orxConfig_PushSection(orxObject_GetName(enemy));
-            if (orxString_Compare(recipientObjectName, "rifleBulletObject") == 0 && orxString_Compare(senderObjectName, "spiderObject") == 0)
-            {
-                orxObject_SetTargetAnim(pstSenderObject, "DeadLeft");
-                orxObject_SetLifeTime(pstRecipientObject, 0);
-            }
-            if (orxString_Compare(senderObjectName, "rifleBulletObject") == 0 && orxString_Compare(recipientObjectName, "spiderObject") == 0)
-            {
-                orxObject_SetTargetAnim(pstRecipientObject, "DeadLeft");
-                orxObject_SetLifeTime(pstSenderObject, 0);
-            }
-            if (orxString_Compare(recipientObjectName, "pistolBulletObject") == 0 && orxString_Compare(senderObjectName, "spiderObject") == 0)
-            {
-                orxObject_SetTargetAnim(pstSenderObject, "DeadLeft");
-                orxObject_SetLifeTime(pstRecipientObject, 0);
-            }
-            if (orxString_Compare(senderObjectName, "pistolBulletObject") == 0 && orxString_Compare(recipientObjectName, "spiderObject") == 0)
-            {
-                orxObject_SetTargetAnim(pstRecipientObject, "DeadLeft");
-                orxObject_SetLifeTime(pstSenderObject, 0);
-            }
-            orxConfig_PopSection();
-        }
+    // Has gun?
+    if(playersGun)
+    {
+        // Enable it based on input
+        orxObject_Enable(playersGun, orxInput_IsActive("Shoot"));
     }
-    return orxSTATUS_SUCCESS;
+}
+
+void orxFASTCALL Update(const orxCLOCK_INFO *info, void *context)
+{
+    Movement();
+    Shoot();
+    EnemyMovement();
 }
 
 orxSTATUS orxFASTCALL Init()
 {
     orxViewport_CreateFromConfig("Viewport");
-
     orxObject_CreateFromConfig("Scene");
 
+    // Alternatively, the player could be spawned by the scene and we'd retrieve it here
     player = orxObject_CreateFromConfig("playerObject");
-
-    playersRifle = orxObject_CreateFromConfig("playersRifle");
-
-    playersPistol = orxObject_CreateFromConfig("playersPistol");
-
-    orxObject_CreateFromConfig("spaceShipMiddlePlatformObject");
 
     orxEvent_AddHandler(orxEVENT_TYPE_PHYSICS, PhysicsEventHandler);
 
-    pistol = orxObject_CreateFromConfig("pistolObject");
-
-    rifle = orxObject_CreateFromConfig("rifleObject");
+    // Use a clock callback for the game's logic
+    orxClock_Register(orxClock_FindFirst(-1.0f, orxCLOCK_TYPE_CORE), Update, orxNULL, orxMODULE_ID_MAIN, orxCLOCK_PRIORITY_NORMAL);
 
     return orxSTATUS_SUCCESS;
-}
-
-void PickUp()
-{
-    if (orxInput_IsActive("PickUp") && pistolPickUp == true && hasPistol == false && hasRifle == false || hasPistol == false && hasRifle == false && pistolPickUp == true)
-    {
-        orxObject_SetLifeTime(pistol, 0);
-        hasPistol = true;
-    }
-
-    if (orxInput_IsActive("PickUp") && riflePickUp == true && hasPistol == false && hasRifle == false || hasPistol == false && hasRifle == false && riflePickUp == true)
-    {
-        orxObject_SetLifeTime(rifle, 0);
-        hasRifle = true;
-    }
-}
-
-void Shoot()
-{
-    orxObject_Enable(playersPistol, orxInput_IsActive("Shoot") && hasPistol);
-    orxObject_Enable(playersRifle, orxInput_IsActive("Shoot") && hasRifle);
 }
 
 orxSTATUS orxFASTCALL Run()
@@ -230,43 +187,26 @@ orxSTATUS orxFASTCALL Run()
 
     if(orxInput_IsActive("Quit"))
     {
-
         eResult = orxSTATUS_FAILURE;
     }
-
-    PickUp();
-
-    Movement();
-
-    Shoot();
-
-    EnemyMovement();
 
     return eResult;
 }
 
 void orxFASTCALL Exit()
 {
-
 }
 
 orxSTATUS orxFASTCALL Bootstrap()
 {
-
     orxResource_AddStorage(orxCONFIG_KZ_RESOURCE_GROUP, "../data/config", orxFALSE);
-
-
     return orxSTATUS_SUCCESS;
 }
 
 int main(int argc, char **argv)
 {
-
     orxConfig_SetBootstrap(Bootstrap);
-
-
     orx_Execute(argc, argv, Init, Run, Exit);
-
 
     return EXIT_SUCCESS;
 }
